@@ -20,9 +20,7 @@ class Params(BaseModel):
 
 @app.post("/submit")
 async def submit_params(params: Params):
-    # Process the submitted parameters (e.g., clone the GitHub repository, deploy to Vercel, etc.)
-    # For now, just return a success message
-    return {"message": "123 Parameters received successfully", "params": params}
+    return {"message": "Parameters received successfully", "params": params}
 
 
 @app.get("/", response_class=HTMLResponse)
