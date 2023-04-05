@@ -21,23 +21,24 @@ async def submit_params(params: Params):
 . 要先設定環境變數
 . 然後要呼叫 git_clone.main(source_url, target_name)
 . 然後要呼叫 vercel_deploy.main(github_repo_url, vercel_project_name, vercel_team_id)
-. 把所有呼叫之後的結果
-== pip install vercel-deploy 套件網路 API 參考文件如下 ==
+. 把所有呼叫之後的結果回傳給前端
+
+-- pip install vercel-deploy 套件網路 API 參考文件如下 --
 
 import git_clone
 
 source_url = "https://github.com/source_user/source_repo.git"
 target_name = "new_repo_name"
 
-git_clone.main(source_url, target_name)
+response_string=git_clone.main(source_url, target_name)
 
 import vercel_deploy
 
 github_repo_url = "https://github.com/user/repo.git"
-vercel_project_name = "my-vercel-project"
+vercel_project_name = "vercel_project_name"
 vercel_team_id = "team_id"
 
-vercel_deploy.main(github_repo_url, vercel_project_name, vercel_team_id)
+response_string=vercel_deploy.main(github_repo_url, vercel_project_name, vercel_team_id)
 
 
 == 2023-04-05 22:37 Bowen ==

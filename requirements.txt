@@ -3,4 +3,4 @@ pydantic
 Jinja2
 starlette
 uvicorn
-vercel-deploy
+vercel-deploy==1.8
