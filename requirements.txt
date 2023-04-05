@@ -1,2 +1,5 @@
 fastapi
 pydantic
+Jinja2
+starlette
+uvicorn
