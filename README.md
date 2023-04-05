@@ -1,25 +1,38 @@
-# 提供前端可以讓建立 github 專案與部署 vercel 完全自動化
-2023-04-05 Bowen Chiu
+# 自動化 Github 和 Vercel 部署
 
-###
+這是一個可以自動化 Github 和 Vercel 部署的網頁應用程式，只需要填寫一些參數，就可以在大約 25 秒內完成應用程式的部署。以下是使用說明：
 
-. 請幫我建構前後端，都使用 fastapi app.py 單一檔案不要有額外的檔案出現
-. 前端使用 bootstrap RWD 排版要整齊, 手機也要能用, 引用 bootstrap 時不要 integrity 屬性
-. 前端要能輸入以下參數 001 to 007
-    . 環境變數
-        001 <your-github-access-token>
-        002 <your-vercel-access-token>
-    . git_clone 
-        003 <source_url> 
-        004 <target_name>
-    . vercel_deploy
-        005 <github_repo_url> 
-        006 <vercel_project_name> 
-        007 <vercel_team_id>
-. 前端參數輸入之後儲存在瀏覽器的 localStorage
-. 如果 localStorage 沒有這些參數就預設是空的輸入框
-. 如果 localStorage 已經有 001 to 007 參數，事先帶入預設值放上去
-. 前端要有一個「送出」按鈕，可以把參數送給後端
-. 前端要有一個較大塊的返回顯示區域，專門用來顯示後端執行之後的返回結果
-. 送出按鈕按下去之後，要能夠把後端返回哪些成功或失敗的訊息，全部顯示在返回顯示區域
-. fastapi 後端接收到 001 to 007 參數之後，返回一個 json 說明 OK 成功
+## 使用步驟
+
+1. 複製 Github 儲存庫的網址，例如：`https://github.com/bohachu/fastapi-vercel-005`
+2. 在 Vercel 上創建一個新的項目，並選擇您的團隊
+3. 在本網頁的表單中填寫以下參數：
+
+- `github_access_token`：輸入您的 Github 存取權杖，您可以從此處創建一個新的存取權杖：https://github.com/settings/tokens/new
+- `vercel_access_token`：輸入您的 Vercel 存取權杖，您可以在您的 Vercel 帳戶設置中找到這個存取權杖
+- `source_url`：輸入您要從 Github 克隆的儲存庫網址，例如 `marcorichetta/fastapi-vercel`
+- `target_name`：輸入您要將儲存庫克隆到本地計算機上的目標文件夾名稱
+- `github_repo_url`：輸入您在 Github 上創建的儲存庫網址，例如 `https://github.com/bohachu/fastapi-vercel-005`
+- `vercel_project_name`：輸入您在 Vercel 上創建的項目名稱，例如 `fastapi-vercel-005`
+- `vercel_team_id`：輸入您的 Vercel 團隊 ID，您可以在您的 Vercel 帳戶設置中找到此 ID
+
+4. 點擊“提交”按鈕，等待約 25 秒，系統會自動完成 Github 和 Vercel 的部署
+
+## 注意事項
+
+- 在使用本網頁之前，請確認您已經具備了足夠的 Github 和 Vercel 權限
+- 在填寫 Github 和 Vercel 存取權杖時，請注意保密，不要將這些權杖洩露給其他人
+- 在填寫參數時，請確保您輸入的是正確的信息，否則部署可能會失敗
+- 如果您在使用過程中遇到任何問題，請聯繫我們的客服人員求助
+
+## 技術細節
+
+本網頁使用了以下技術：
+
+- 前端框架：Bootstrap 4
+- JavaScript 函式庫：jQuery、Popper.js、axios
+- 後端框架：FastAPI
+
+## 開發人員
+
+- Bowen Chiu
